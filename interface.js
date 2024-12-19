@@ -6,7 +6,7 @@
 
 // }))
 let form = document.getElementById('formulario')
-let displayName = document.getElementById('name')
+let displayName = document.getElementsByClassName('name')
 
 try{form.addEventListener('submit', function(){
 
