@@ -1,12 +1,13 @@
-// let card = document.querySelectorAll('.card')
-
-
-// card.forEach(addEventListener('click', function(){
-//     this.classList.toggle('flipped')
-
-// }))
+let card = document.querySelectorAll('.card')
 let form = document.getElementById('formulario')
 let displayName = document.getElementsByClassName('name')
+let name = localStorage.getItem('name') || '...'
+
+for(let element of card){
+    element.addEventListener('click', function(){
+    this.classList.toggle('flipped')
+})}
+   
 
 try{form.addEventListener('submit', function(){
 
@@ -15,6 +16,14 @@ try{form.addEventListener('submit', function(){
 })}catch(error){
     console.log(error)
 }
-let name = localStorage.getItem('name') || '...'
+
 displayName.innerHTML = name
+
+function choose(params) {
+    if (params === 0) {
+        window.location.href = './anime.html'
+    } else {
+        window.location.href = './manga.html'
+    }
+}
 
