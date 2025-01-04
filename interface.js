@@ -1,13 +1,8 @@
-let card = document.querySelectorAll('.card')
-let form = document.getElementById('formulario')
-let displayName = document.getElementsByClassName('name')
-let name = localStorage.getItem('name') || '...'
-
-for(let element of card){
-    element.addEventListener('click', function(){
-    this.classList.toggle('flipped')
-})}
-   
+const card = document.querySelectorAll('.card')
+const form = document.getElementById('formulario')
+const displayName = document.getElementsByClassName('name')
+const name = localStorage.getItem('name') || '...'
+let timer = document.querySelector(".temporizador")
 
 try{form.addEventListener('submit', function(){
 
@@ -26,4 +21,10 @@ function choose(params) {
         window.location.href = './manga.html'
     }
 }
+card.forEach(element => {
+    element.addEventListener('click', function() {
+        flipCard(element)
+    });
+});
+
 

@@ -5,7 +5,7 @@
 
 :root{
     --primary-color: #FCAB10;
-    --secundary-color: rgba(119, 0, 255, 0.842);
+    --secundary-color: rgba(255, 0, 43, 0.842);
     --text:"pixelify_sans", sans-serif;
 }
 
@@ -28,7 +28,7 @@ body{
    
     
 }
-.conteinerLogin{
+.conteiner-login{
     display: flex;
     flex-direction: column;
     width: 100%;
@@ -71,15 +71,14 @@ input{
         opacity:0.6;
     }
 }
-.login #send{
+.login #button-send{
     background-color: #ece5e5;
     color:#070707;
     text-align: center;
+    & :hover{
+        cursor: pointer;
+    }
 }
-#send:hover{
-    cursor: pointer;
-}
-
 /* choose part */
 
 
@@ -124,9 +123,8 @@ input{
     top:10%;
     left:5.1%;
     overflow: hidden;
-    
-
 }
+
 .choose{
     height: 674px;
     border-radius: 30px;
@@ -155,30 +153,35 @@ input{
 }
 
 
-#temporizador{
+.temporizador{
     color:var(--primary-color);
     font-family: var(--text);
     font-size: 30px;
     margin: 1.5% 12.2%;
 }
 /* card part */
-#cardpai{
+.card-pai{
     margin: 0 12%;
     width: 70%;
     max-height: 100vh;
     display: grid;
-    grid-template: 18vh 18vh 18vh 18vh / 20% 20% 20% 20% 20%;
-    gap: 39px;
+    grid-template: 20vh 20vh 20vh 20vh / 20% 20% 20% 20% 20%;
+    gap: 30px;
     background-color: #000000;
 }
 .card{
     perspective: 1000px;
     border-radius: 20px;
+    transition:all 0.2s;
     & img{
         width: 100%;
         height: 100%;
         border-radius: 20px;
     }
+}
+.card:hover{
+    transform: scale(1.05);
+    cursor: pointer;
 }
 
 
@@ -195,7 +198,8 @@ input{
 }
 .back{
     transform:rotateY(180deg);
-    box-shadow: 1px 1px 10px 5px var(--secundary-color) ;
+    /* box-shadow: 1px 1px 10px 5px var(--primary-color) ; */
+    
 }
 .front{
     background-color: #000000;
@@ -203,7 +207,7 @@ input{
     background-size: 70%;
     background-position:center;
     background-repeat: no-repeat;
-     border: solid 1px var(--primary-color) ; 
+     border: solid 1px var(--secundary-color) ; 
 }
 
 .card.flipped .front{
